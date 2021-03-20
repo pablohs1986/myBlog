@@ -26,7 +26,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <form action="/posts/store" method="POST">
+        <form action="/posts/store" method="POST" enctype="multipart/form-data">
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Title</label>
@@ -39,6 +39,12 @@
               <label>Description</label>
               <textarea class="form-control" name="body" id="body" rows=5 placeholder="Description"></textarea>
             </div>
+          </div>
+          <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Image</label>
+                <input class="form-control" type="file" name="image" id="image">
+              </div>
           </div>
           <br>
           <div id="success"></div>
