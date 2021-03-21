@@ -20,6 +20,7 @@ const authMiddleware = require('./middleware/authMiddleWare');
 const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthenticatedMiddleware');
 const logoutController = require('./controllers/logout');
 const { allowedNodeEnvironmentFlags } = require('process');
+const flash = require('connect-flash');
 global.loggedIn = null;
 const app = new express();
 
@@ -38,9 +39,10 @@ app.use("*", (req, res, next) => {
     loggedIn = req.session.userId;
     next();
 });
+app.use(flash());
 
 app.listen(4000, () => {
-    console.log('Express RRRUUUUNNNIIIIINNNNGGGG!!!!!!');
+    console.log('Express RRRUUUUNNNIIIIINNNNGGGG on 4000!!!!!!');
 });
 
 ////// Gets & Posts //////
