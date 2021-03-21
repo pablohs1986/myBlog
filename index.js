@@ -27,8 +27,6 @@ const app = new express();
 ////// Mongo connection //////
 mongoose.connect('mongodb+srv://myblog:abcd@cluster0.69kuz.mongodb.net/myblog_database?retryWrites=true&w=majority', {useNewUrlParser: true});
 
-
-
 ////// Middlewares //////
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -43,8 +41,13 @@ app.use("*", (req, res, next) => {
 });
 app.use(flash());
 
-app.listen(4000, () => {
-    console.log('Express RRRUUUUNNNIIIIINNNNGGGG on 4000!!!!!!');
+////// Listen //////
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 4000;
+}
+app.listen(port, () => {
+    console.log('Express RRRUUUUNNNIIIIINNNNGGGG on' + port + ' !!!!!!');
 });
 
 ////// Gets & Posts //////
