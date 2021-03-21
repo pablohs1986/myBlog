@@ -1,5 +1,6 @@
 ////// Variables and requires //////
-
+require('dotenv').config();
+const user = process.env.DB_URI;
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
@@ -25,7 +26,7 @@ global.loggedIn = null;
 const app = new express();
 
 ////// Mongo connection //////
-mongoose.connect('mongodb+srv://myblog:abcd@cluster0.69kuz.mongodb.net/myblog_database?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose.connect(process.env.DB_URI, {useNewUrlParser: true});
 
 ////// Middlewares //////
 app.set('view engine', 'ejs');
