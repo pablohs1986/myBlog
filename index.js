@@ -25,7 +25,9 @@ global.loggedIn = null;
 const app = new express();
 
 ////// Mongo connection //////
-mongoose.connect('mongodb://localhost/myblog_database', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://myblog:abcd@cluster0.69kuz.mongodb.net/myblog_database?retryWrites=true&w=majority', {useNewUrlParser: true});
+
+
 
 ////// Middlewares //////
 app.set('view engine', 'ejs');

@@ -38,6 +38,13 @@
             <div class="form-group floating-label-form-group controls">
               <label>Description</label>
               <textarea class="form-control" name="body" id="body" rows=5 placeholder="Description"></textarea>
+              <script>
+                $('#body').summernote({
+                  placeholder: '',
+                  tabsize: 2,
+                  height: 200
+                });
+              </script>
             </div>
           </div>
           <div class="control-group">
