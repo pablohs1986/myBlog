@@ -63,6 +63,3 @@ app.post('/users/login', redirectIfAuthenticatedMiddleware, loginUserController)
 
 // Not found
 app.use((req,res) => res.render('notfound'));
-
-
-
